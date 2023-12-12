@@ -1,7 +1,5 @@
 # ====================================================================================================
-# Python Job for contract expiration notification email
-# Schedule | daily
-# v1.0 | 2023-01-10 | Toey
+# Python main script
 # ----------------------------------------------------------------------------------------------------
 
 try:
@@ -29,3 +27,4 @@ except Exception:
 	error_message = traceback.format_exc()
 	print(error_message)
 	# sub_warn_me.send_mail_with_text('JOB_FAILED: fmp_ingestion', error_message)
+
