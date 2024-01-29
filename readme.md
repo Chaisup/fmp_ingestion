@@ -78,7 +78,7 @@ group by 1 order by 1 desc;
 ### Testing & Demo
 
 Example [API:stock_dividend_calendar]
-![cap0](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_fmp_api.png)
+![cap0](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_fmp_api_1.png)
 
 MySQL
 ![cap1](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_mysql_1.png)
