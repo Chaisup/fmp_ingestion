@@ -50,7 +50,6 @@ Here are the summary steps.
 3> Test the result using SQL as follows.
 
 ```sql
--- test_query_1
 select * from kkp_staging.fmp__delisted_companies__daily_staging;
 select * from kkp_staging.fmp__historical_dividends__daily_staging;
 select * from kkp_dw.fmp__delisted_companies__daily_update order by 1 desc, 2;
@@ -58,7 +57,6 @@ select * from kkp_dw.fmp__historical_dividends__daily_update order by 1 desc, 2;
 ```
 
 ```sql
--- test_query_2
 select delisted_date, count(1) as cnt, max(_sys_record_time) as latest_sys_record_time
 from kkp_staging.fmp__delisted_companies__daily_staging 
 group by 1 order by 1 desc;
