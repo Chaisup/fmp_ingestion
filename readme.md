@@ -1,5 +1,5 @@
 ## FMP Ingestion Workshop
-My Solution for the Assignment of KKP Dime! Data Engineer Application
+My Solution for the Assignment of KKP - Data Engineer Application
 
 
 ### About
