@@ -50,6 +50,7 @@ Here are the summary steps.
 3> Test the result using SQL as follows.
 
 ```sql
+-- test_query_1
 select * from kkp_staging.fmp__delisted_companies__daily_staging;
 select * from kkp_staging.fmp__historical_dividends__daily_staging;
 select * from kkp_dw.fmp__delisted_companies__daily_update order by 1 desc, 2;
@@ -57,6 +58,7 @@ select * from kkp_dw.fmp__historical_dividends__daily_update order by 1 desc, 2;
 ```
 
 ```sql
+-- test_query_2
 select delisted_date, count(1) as cnt, max(_sys_record_time) as latest_sys_record_time
 from kkp_staging.fmp__delisted_companies__daily_staging 
 group by 1 order by 1 desc;
@@ -77,10 +79,14 @@ group by 1 order by 1 desc;
 
 ### Testing & Demo
 
-![cap1](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_mysql_1.png)
+Example [API:stock_dividend_calendar]
+![cap0](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_fmp_api.png)
 
+MySQL
+![cap1](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_mysql_1.png)
 ![cap2](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_mysql_2.png)
 
+VSC
 ![cap3](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_python.png)
 
 
@@ -89,4 +95,5 @@ group by 1 order by 1 desc;
 	[python.org]: <https://www.python.org/downloads/release/python-3106/>
 	[freecodecamp.org]: <https://www.freecodecamp.org/news/how-to-install-mysql-workbench-on-windows/>
 	[vsc]: <https://code.visualstudio.com/download>
+	[API:stock_dividend_calendar]: <https://financialmodelingprep.com/api/v3/stock_dividend_calendar?from=2024-01-01&to=2024-01-31&apikey=VeF5THZjZC1SznBwCsexx5m6W31A9oQR>
 
