@@ -43,7 +43,7 @@ There are 2 tasks of the ingestion work.
 Here are the summary steps.
 
 1> Use MySQL Workbench to create 4 tables. (This is an initial step.)
-- fmp__delisted_companies__daily_staging
+- create_tables__fmp.sql
 
 2> Run the main script.
 
