@@ -50,17 +50,40 @@ Here are the summary steps.
 3> Test the result using SQL as follows.
 
 ```sql
+-- test_query_1
 select * from kkp_staging.fmp__delisted_companies__daily_staging;
 select * from kkp_staging.fmp__historical_dividends__daily_staging;
-select * from kkp_dw.fmp__delisted_companies__daily_update;
-select * from kkp_dw.fmp__historical_dividends__daily_update;
+select * from kkp_dw.fmp__delisted_companies__daily_update order by 1 desc, 2;
+select * from kkp_dw.fmp__historical_dividends__daily_update order by 1 desc, 2;
 ```
+
+```sql
+-- test_query_2
+select delisted_date, count(1) as cnt, max(_sys_record_time) as latest_sys_record_time
+from kkp_staging.fmp__delisted_companies__daily_staging 
+group by 1 order by 1 desc;
+
+select date, count(1) as cnt, max(_sys_record_time) as latest_sys_record_time
+from kkp_staging.fmp__historical_dividends__daily_staging
+group by 1 order by 1 desc;
+
+select delisted_date, count(1) as cnt, max(_sys_record_time) as latest_sys_record_time
+from kkp_dw.fmp__delisted_companies__daily_update
+group by 1 order by 1 desc;
+
+select date, count(1) as cnt, max(_sys_record_time) as latest_sys_record_time
+from kkp_dw.fmp__historical_dividends__daily_update
+group by 1 order by 1 desc;
+```
+
 
 ### Testing & Demo
 
-![cap1](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_mysql.png)
+![cap1](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_mysql_1.png)
 
-![cap2](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_python.png)
+![cap2](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_mysql_2.png)
+
+![cap3](https://github.com/Chaisup/fmp_ingestion/blob/main/cap_demo_python.png)
 
 
 [//]: # (These are reference links. Credit: https://dillinger.io/)
